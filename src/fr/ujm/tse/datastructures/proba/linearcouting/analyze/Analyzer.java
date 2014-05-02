@@ -19,5 +19,22 @@ public class Analyzer {
 	 */
 	public void readLogFile() {
 
+		/**
+		 * TODO Your work of coding starts here, once you have grasped the
+		 * different classes available to you.
+		 */
+
 	}
+
+	/**
+	 * This is the program entry point to use when running your probabilistic
+	 * counters.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Analyzer analyzer = new Analyzer();
+		analyzer.readLogFile();
+	}
+
 }

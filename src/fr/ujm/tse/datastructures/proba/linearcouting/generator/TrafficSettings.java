@@ -29,6 +29,6 @@ public class TrafficSettings {
 	 * addresses in the private network subnet, hence under a load factor of 10
 	 * and a biais of the estimator of 0.1, this means 25.5 bits at minimum.
 	 */
-	public static int LINEAR_COUNTER_SIZE = 26;
+	public static int LINEAR_COUNTER_SIZE = 24;
 
 }

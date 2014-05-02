@@ -1,5 +1,7 @@
 package fr.ujm.tse.datastructures.proba.linearcouting.model;
 
+import fr.ujm.tse.datastructures.proba.linearcouting.generator.TrafficSettings;
+
 /**
  * 
  * A Packet is the atomic value observed here.
@@ -9,8 +11,6 @@ package fr.ujm.tse.datastructures.proba.linearcouting.model;
  */
 public class Packet {
 
-	private static int H = 26; // max value (starting from 0 included) that the
-								// hash function will output
 	private String sourceIp = null;
 	private String destIp = null;
 	private long timestamp = 0;
@@ -63,7 +63,15 @@ public class Packet {
 		result = prime * result
 				+ ((sourceIp == null) ? 0 : sourceIp.hashCode());
 		result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
-		return result % H;
+		return Math.abs(result % TrafficSettings.LINEAR_COUNTER_SIZE); // the
+																		// hash
+																		// function
+																		// is
+																		// uniform
+																		// on
+		// [-MAXINT;MAXINT], and we reduce it
+		// here between [0;H], but eh, that's an
+		// example...
 	}
 
 	@Override
@@ -146,6 +154,6 @@ public class Packet {
 	 *         timestamp format validation, but this is a toy example, right ?).
 	 */
 	public int getTimestampIndex() {
-		return (int) Math.floor((double) this.timestamp / 3600);
+		return (int) Math.floor((double) (this.timestamp - 1398376800) / 3600);
 	}
 }
