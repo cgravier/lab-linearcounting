@@ -16,7 +16,7 @@ The current repository offer the code to bootstrap you.
 
 In order to address this lab, you may want to process as follows : 
 
- * Read the entire lab document
+ * Read the entire lab document located [here](https://github.com/cgravier/lab-linearcounting/blob/master/resources/document.pdf)
  * Understand the existing code that is giving to you
  * Start coding what is missing in the class <code>Analyzer</code> (Some hints are given in the <code>TODO</code> comments section of the main method).
 
