@@ -44,6 +44,11 @@ public class LinearCounter {
 	 * @return
 	 */
 	public double getCardinality() {
-		// TODO !
-	}
+		// here I decompose the computation of the estimator for your
+		// convenience.
+		int m = TrafficSettings.LINEAR_COUNTER_SIZE;
+		int w = this.getWeight();
+		double zeroRatio = (m - w) / (double)m;
+		return -m * Math.log(zeroRatio);
+		}
 }
